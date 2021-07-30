@@ -1,0 +1,7 @@
+{
+  "name": "HStats",
+  "language": "typescript",
+  "manager": "yarn",
+  "token": "TOKEN",
+  "prefix": "h!"
+}
