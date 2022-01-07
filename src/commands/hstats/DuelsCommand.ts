@@ -4,9 +4,9 @@ import DiscordClient from '../../client/client'
 import fetch from 'node-fetch'
 import { hypixelApiKey } from '../../../config.json'
 
-export default class SkywarsCommand extends BaseCommand {
+export default class DuelsCommand extends BaseCommand {
   constructor() {
-    super('skywars', 'hstats', ['s', 'sw', 'sky'])
+    super('duels', 'hstats', ['d', 'dls', 'duel'])
   }
 
   async run(client: DiscordClient, message: Message, args: Array<string>) {
@@ -42,36 +42,39 @@ export default class SkywarsCommand extends BaseCommand {
     }
 
     /**
-     * Skywars things
+     * Duels things
      */
-    const swCoins = json.player.stats.SkyWars.coins
-    const swExp = json.player.stats.SkyWars.skywars_experience
-    const swSouls = json.player.stats.SkyWars.souls
-    const swChests = json.player.stats.SkyWars.chests_opened
-    const swDeaths = json.player.stats.SkyWars.deaths
-    const swLoses = json.player.stats.SkyWars.losses
-    const swKills = json.player.stats.SkyWars.kills
-    const swWins = json.player.stats.SkyWars.wins
-    const swHeads = json.player.stats.SkyWars.heads
+
+    const player = json.player.stats.Duels
+
+    const dCoins = player.coins
+    const dGames = player.games_played_duels
+    const dDeaths = player.deaths
+    const dKills = player.kills
+    const dWins = player.wins
+    const dLosses = player.losses
+    const dBlocks = player.blocks_placed
+    const dBow = player.bow_shots
+    const dGap = player.golden_apple_eaten
 
     /**
-     * Make skywars embed
+     * Make duels embed
      */
     const embed = new MessageEmbed()
       .setAuthor(json.player.displayname, `https://minotar.net/avatar/${UUID}`)
-      .setTitle(`${json.player.displayname}'s SkyWars Stats`)
+      .setTitle(`${json.player.displayname}'s Duels Stats`)
       .setThumbnail(`https://minotar.net/avatar/${UUID}`)
-      .setColor(0x8155e8)
+      .setColor(0xf2b315)
       .setDescription('')
-      .addField('SkyWars Experience', swExp, true)
-      .addField('SkyWars Coins', swCoins, true)
-      .addField('SkyWars Opened Chests', swChests, true)
-      .addField('SkyWars Souls', swSouls, true)
-      .addField('SkyWars Heads', swHeads, true)
-      .addField('SkyWars Losses', swLoses, true)
-      .addField('SkyWars Wins', swWins, true)
-      .addField('SkyWars Kills', swKills, true)
-      .addField('SkyWars Deaths', swDeaths, true)
+      .addField('Duels Coins', dCoins, true)
+      .addField('Duels played', dGames, true)
+      .addField('Duels Deaths', dDeaths, true)
+      .addField('Duels Kills', dKills, true)
+      .addField('Duels Wins', dWins, true)
+      .addField('Duels Losses', dLosses, true)
+      .addField('Blocks Placed', dBlocks, true)
+      .addField('Bow Shots', dBow, true)
+      .addField('Gaps eaten', dGap, true)
       .setFooter(
         message.member?.displayName,
         message.author.displayAvatarURL({ dynamic: true })

@@ -38,7 +38,7 @@ export default class UserCommand extends BaseCommand {
      * Check if success
      */
     if (!json.success) {
-      message.reply('An error ocured while fetching hypixel user data')
+      message.reply('An error ocurred while fetching hypixel user data')
       return
     }
 
@@ -71,7 +71,7 @@ export default class UserCommand extends BaseCommand {
       .setAuthor(player.displayname, `https://minotar.net/avatar/${UUID}`)
       .setTitle(player.displayname)
       .setThumbnail(`https://minotar.net/avatar/${UUID}`)
-      .setColor('RANDOM')
+      .setColor(0xc5e855)
       .setDescription(`ID: ${ID}`)
       .addField('Rank', rank, true)
       .addField('Karma', karma, true)
@@ -79,7 +79,7 @@ export default class UserCommand extends BaseCommand {
       .addField('Achievment Points', achievmentPoints, true)
       .addField('Language', lang, true)
       .addField('Total Rewards', totalRewards, true)
-      .addField('Most Recent Gamee Type', recentGameType, true)
+      .addField('Most Recent Game Type', recentGameType, true)
       .addField('First Login', firstLogin, true)
       .addField('Last Login', lastLogin, true)
       .setFooter(

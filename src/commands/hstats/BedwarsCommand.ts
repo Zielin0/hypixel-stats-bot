@@ -38,7 +38,7 @@ export default class BedwarsCommand extends BaseCommand {
      */
 
     if (!json.success) {
-      message.reply('An error ocured while fetching hypixel user data')
+      message.reply('An error ocurred while fetching hypixel user data')
       return
     }
 
@@ -66,7 +66,7 @@ export default class BedwarsCommand extends BaseCommand {
       .setAuthor(json.player.displayname, `https://minotar.net/avatar/${UUID}`)
       .setTitle(`${json.player.displayname}'s BedWars stats`)
       .setThumbnail(`https://minotar.net/avatar/${UUID}`)
-      .setColor('RANDOM')
+      .setColor(0xe85590)
       .setDescription(``)
       .addField('BedWars Experience', bwExp, true)
       .addField('BedWars Coins', bwCoins, true)
