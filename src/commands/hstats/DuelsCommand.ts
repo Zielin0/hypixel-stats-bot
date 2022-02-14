@@ -55,7 +55,7 @@ export default class DuelsCommand extends BaseCommand {
     const dLosses = player.losses
     const dBlocks = player.blocks_placed
     const dBow = player.bow_shots
-    const dGap = player.golden_apple_eaten
+    const dGap = player.golden_apples_eaten
 
     /**
      * Make duels embed

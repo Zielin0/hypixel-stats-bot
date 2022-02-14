@@ -62,4 +62,6 @@
   - <a href="https://www.youtube.com/watch?v=Q1RYidqNIac">SpeedCoding a SkyWars command</a>
   <br />
   - <a href="https://www.youtube.com/watch?v=WyDWSqa6FyU">SpeedCoding a User command</a>
+  <br /> 
+  - <a href="https://www.youtube.com/watch?v=u6Z2FJynhFU">SpeedCoding a Duels command</a>
 </div>
